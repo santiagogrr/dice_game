@@ -149,7 +149,11 @@ class HomeScreen extends Component {
         }
         
       }
-    }
+
+      setTimeout(() => {
+        this.props.navigation.navigate('Total',{dice: dice})
+        }, 2000);
+      }
 
     render() {
 
@@ -182,22 +186,6 @@ class HomeScreen extends Component {
                 </View>);
               }
         }
-
-        // if(this.state.isSomeRandom){
-        //   test = 
-        //   this.state.selected.map((item, i) =>{
-        //     return(
-        //       <View key={i} style={styles.bottomItem}>
-        //       <TouchableOpacity onPress={() => this.onPressDice(item)}>
-        //           <Image
-        //               source={item.img}
-        //               //style = {styles.pic}
-        //               style = {this.isSelected(this.state.selected, item)  ? styles.picPressed:styles.pic}
-        //           />
-        //       </TouchableOpacity>
-        //       </View>
-        //   )});
-        // }
 
         if(this.state.modalVisible && this.state.firstPress==2 ){
           modal = <Modal 
